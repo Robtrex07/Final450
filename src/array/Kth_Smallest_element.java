@@ -16,7 +16,7 @@ public class Kth_Smallest_element {
 
 	}
 
-	public static void sol2(int[] arr, int k) {
+	public static void sol2_MinHeap(int[] arr, int k) {
 
 		System.out.println("\n---------Solution 2-------------\n");
 		PriorityQueue<Integer> queue = new PriorityQueue<>();
@@ -24,15 +24,10 @@ public class Kth_Smallest_element {
 		for (int i : arr)
 			queue.add(i);
 
-		System.out.println(queue);
-		int j = 0;
-		if (j == k) {
-			System.out.println("value of j "+j);
-			System.out.println(queue.poll());
-			return;
-		}
-		queue.poll();
-		j++;
+		while(--k>0)
+			queue.poll();
+		
+		System.out.println("Kth Smallest element "+queue.peek());
 	}
 
 	public static void main(String[] args) {
@@ -40,7 +35,7 @@ public class Kth_Smallest_element {
 		int[] arr = { 7, 10, 4, 3, 20, 15 };
 		int k = 3;
 		sol1(arr, k);
-		sol2(arr,k);
+		sol2_MinHeap(arr,k);
 
 	}
 
