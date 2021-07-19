@@ -1,5 +1,7 @@
 package array;
 
+// This question can be solved with the help of Min heap and max heap as well
+
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
